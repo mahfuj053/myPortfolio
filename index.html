@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahfuj Ahmed Bhuiya - Web Developer & Cybersecurity Enthusiast</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0b0f19',
+                        cardBg: '#111827',
+                        accentCyan: '#06b6d4',
+                        accentBlue: '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and overflow prevention */
+        html, body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-darkBg/95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-2xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-mono">
+                MAB
+            </a>
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium text-gray-300">
+                <a href="#home" class="hover:text-cyan-400 transition">Home</a>
+                <a href="#about" class="hover:text-cyan-400 transition">About</a>
+                <a href="#education" class="hover:text-cyan-400 transition">Education</a>
+                <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+                <a href="#resume" class="hover:text-cyan-400 transition">Resume</a>
+                <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-block px-4 lg:px-5 py-2 text-xs font-semibold uppercase tracking-wider text-cyan-400 border border-cyan-500/40 rounded-full hover:bg-cyan-500/10 transition">
+                    Let's Talk
+                </a>
+                <!-- Mobile Menu Toggle Button -->
+                <button id="menuBtn" onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-cyan-400 text-2xl focus:outline-none p-2 cursor-pointer">
+                    <i class="fa-solid fa-bars" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-cardBg border-b border-gray-800 px-6 py-5 shadow-2xl transition-all">
+            <nav class="flex flex-col space-y-4 text-base font-medium text-gray-300">
+                <a href="#home" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">Home</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">About</a>
+                <a href="#education" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">Education</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">Skills</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">Projects</a>
+                <a href="#resume" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">Resume</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="hover:text-cyan-400 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-950/20 via-darkBg to-darkBg">
+        <div class="max-w-6xl w-full grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+            <div class="text-center md:text-left order-2 md:order-1">
+                <p class="text-cyan-400 font-medium mb-3 tracking-wide">Hello World, I'm</p>
+                <!-- Responsive Heading Name -->
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-white leading-tight">
+                    Mahfuj Ahmed Bhuiya
+                </h1>
+                <p class="text-base sm:text-lg text-cyan-300 font-mono mb-6">
+                    &lt;/&gt; Web Developer & Cybersecurity Enthusiast
+                </p>
+                <p class="text-gray-400 mb-8 leading-relaxed text-sm sm:text-base max-w-xl mx-auto md:mx-0">
+                    I build modern, responsive, and user-friendly websites & web applications with a strong focus on security and performance.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                    <a href="#projects" class="px-6 sm:px-7 py-3 text-sm sm:text-base font-semibold text-darkBg bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg hover:opacity-90 transition">
+                        Explore Projects
+                    </a>
+                    <button onclick="openResumeModal()" class="px-6 sm:px-7 py-3 text-sm sm:text-base font-semibold text-gray-200 bg-gray-800/80 border border-gray-700 rounded-full hover:bg-gray-700 transition flex items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-file-arrow-down text-cyan-400"></i> View Resume
+                    </button>
+                </div>
+                <div class="flex justify-center md:justify-start space-x-6 text-xl text-gray-400">
+                    <a href="https://github.com/mahfuj053" target="_blank" class="hover:text-cyan-400 transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://facebook.com/" target="_blank" class="hover:text-cyan-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="mailto:ma2228439@gmail.com" class="hover:text-cyan-400 transition"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <!-- Hero Image / Photo Section -->
+            <div class="flex justify-center order-1 md:order-2">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
+                    <img src="pic/mahfuj.jpg" alt="Mahfuj Ahmed Bhuiya" class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full object-cover border-4 border-gray-800 shadow-2xl transition-transform duration-300 group-hover:scale-[1.02]" style="object-position: center 22%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-gray-800/60">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-xs uppercase tracking-widest text-cyan-400 mb-2 font-mono">About Me</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Committed to turning ideas into digital success.</h3>
+            <div class="bg-cardBg p-6 sm:p-8 rounded-2xl border border-gray-800 text-gray-300 leading-relaxed shadow-xl text-left text-sm sm:text-base">
+                <p class="mb-4">
+                    Hello! I'm Mahfuj Ahmed Bhuiya, a Software Engineering student at Daffodil International University with a major in Cybersecurity. I focus on web and network security, ethical hacking, and vulnerability assessment, and I enjoy building secure, user-friendly web applications.
+                </p>
+                <p>
+                    Currently, I'm working on a research paper on LLM-based cyber threat detection and classification. I'm open to internships and collaboration where I can learn, contribute, and grow in real-world security.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-gray-800/60 bg-gray-950/40">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-cyan-400 mb-2 font-mono">Academic Background</h2>
+                <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-white">My <span class="text-cyan-400">Education</span></h3>
+                <p class="text-gray-400 text-sm">Formal academic qualification and specialization</p>
+            </div>
+
+            <div class="bg-cardBg p-6 sm:p-8 rounded-2xl border border-gray-800 shadow-xl relative overflow-hidden group hover:border-cyan-500/50 transition">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl group-hover:bg-cyan-500/10 transition"></div>
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                    <div>
+                        <span class="px-3 py-1 text-xs font-mono font-semibold text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 rounded-full inline-block mb-3">
+                            Bachelor of Science (BSc)
+                        </span>
+                        <h4 class="text-xl sm:text-2xl font-bold text-white">Software Engineering</h4>
+                        <p class="text-cyan-300 font-medium text-sm sm:text-base mt-1"><i class="fa-solid fa-graduation-cap mr-2"></i> Daffodil International University (DIU)</p>
+                    </div>
+                    <div class="md:text-right">
+                        <span class="text-xs font-mono text-gray-400 bg-gray-900 px-3 py-1.5 rounded-lg border border-gray-800 inline-block">
+                            Major: Cybersecurity
+                        </span>
+                    </div>
+                </div>
+                <p class="text-gray-400 text-xs sm:text-sm leading-relaxed border-t border-gray-800/80 pt-4 mt-4">
+                    Focused on core software engineering principles, secure coding practices, network architecture, and specialized studies in cybersecurity, vulnerability assessment, and threat detection mechanisms.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-gray-800/60">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3 text-white"><span class="text-cyan-400">Professional</span> Skills</h2>
+                <p class="text-gray-400 text-sm">My technical level and expertise in web development & programming</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <!-- Skill Item -->
+                <div class="bg-cardBg p-4 sm:p-5 rounded-xl border border-gray-800">
+                    <div class="flex justify-between mb-2 text-sm font-medium">
+                        <span class="text-gray-200"><i class="fa-brands fa-html5 text-orange-500 mr-2"></i> HTML & CSS</span>
+                        <span class="text-cyan-400">95%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full" style="width: 95%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-4 sm:p-5 rounded-xl border border-gray-800">
+                    <div class="flex justify-between mb-2 text-sm font-medium">
+                        <span class="text-gray-200"><i class="fa-brands fa-js text-yellow-400 mr-2"></i> JavaScript</span>
+                        <span class="text-cyan-400">85%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-4 sm:p-5 rounded-xl border border-gray-800">
+                    <div class="flex justify-between mb-2 text-sm font-medium">
+                        <span class="text-gray-200"><i class="fa-brands fa-php text-indigo-400 mr-2"></i> PHP</span>
+                        <span class="text-cyan-400">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-4 sm:p-5 rounded-xl border border-gray-800">
+                    <div class="flex justify-between mb-2 text-sm font-medium">
+                        <span class="text-gray-200"><i class="fa-brands fa-python text-blue-400 mr-2"></i> Python</span>
+                        <span class="text-cyan-400">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-4 sm:p-5 rounded-xl border border-gray-800">
+                    <div class="flex justify-between mb-2 text-sm font-medium">
+                        <span class="text-gray-200"><i class="fa-solid fa-database text-cyan-400 mr-2"></i> MySQL</span>
+                        <span class="text-cyan-400">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-4 sm:p-5 rounded-xl border border-gray-800">
+                    <div class="flex justify-between mb-2 text-sm font-medium">
+                        <span class="text-gray-200"><i class="fa-brands fa-wordpress text-blue-500 mr-2"></i> WordPress & Git</span>
+                        <span class="text-cyan-400">88%</span>
+                    </div>
+                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-gray-800/60 bg-gray-950/40">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold mb-3 text-white">My <span class="text-cyan-400">Portfolio</span></h2>
+                <p class="text-gray-400 text-sm">Check out some of my recent projects</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Project 1 -->
+                <div class="bg-cardBg rounded-xl border border-gray-800 overflow-hidden flex flex-col justify-between hover:border-cyan-500/50 transition">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-bus text-3xl text-cyan-400"></i>
+                            <a href="https://github.com/mahfuj053/Bus-Ticketing-System-main" target="_blank" class="text-gray-400 hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-gray-100">Online Bus Ticketing System</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                            A fully functional bus ticketing web application designed to manage bookings, routes, and passenger tickets efficiently.
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 bg-gray-900/50 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-cyan-300">Web App / Booking</span>
+                        <a href="https://github.com/mahfuj053/Bus-Ticketing-System-main" target="_blank" class="text-xs font-semibold text-cyan-400 hover:underline flex items-center gap-1">View Repository <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-cardBg rounded-xl border border-gray-800 overflow-hidden flex flex-col justify-between hover:border-blue-500/50 transition">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <i class="fa-solid fa-shield-water text-3xl text-blue-400"></i>
+                            <a href="https://github.com/mahfuj053/FloodGuard" target="_blank" class="text-gray-400 hover:text-cyan-400 transition text-xl"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-bold mb-2 text-gray-100">FloodGuard System</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mb-4 leading-relaxed">
+                            An innovative system designed to monitor and alert regarding flood conditions, helping in early response and safety measures.
+                        </p>
+                    </div>
+                    <div class="px-6 py-4 bg-gray-900/50 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs font-mono text-blue-300">System / Monitoring</span>
+                        <a href="https://github.com/mahfuj053/FloodGuard" target="_blank" class="text-xs font-semibold text-cyan-400 hover:underline flex items-center gap-1">View Repository <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume / CV Section -->
+    <section id="resume" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-gray-800/60">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-xs uppercase tracking-widest text-cyan-400 mb-2 font-mono">Career Document</h2>
+            <h3 class="text-2xl sm:text-3xl font-bold mb-6 text-white">My <span class="text-cyan-400">Resume</span></h3>
+            <p class="text-gray-400 mb-8 text-sm">Click below to view my complete professional resume or download a copy.</p>
+            
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <button onclick="openResumeModal()" class="px-6 sm:px-7 py-3.5 text-sm sm:text-base font-semibold text-darkBg bg-cyan-400 rounded-full shadow-lg hover:bg-cyan-300 transition flex items-center gap-2 cursor-pointer">
+                    <i class="fa-solid fa-eye"></i> View Full Resume
+                </button>
+                <a href="CV/Mahfuj_Ahmed_Bhuiya.pdf" download class="px-6 sm:px-7 py-3.5 text-sm sm:text-base font-semibold text-gray-200 bg-cardBg border border-gray-700 rounded-full hover:bg-gray-800 transition flex items-center gap-2">
+                    <i class="fa-solid fa-download text-cyan-400"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Modal Popup -->
+    <div id="resumeModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden p-3 sm:p-4">
+        <div class="bg-cardBg border border-gray-800 w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="px-4 sm:px-6 py-4 border-b border-gray-800 flex items-center justify-between bg-gray-900/60">
+                <h3 class="text-sm sm:text-lg font-bold text-white flex items-center gap-2 truncate">
+                    <i class="fa-solid fa-file-pdf text-cyan-400"></i> Mahfuj Ahmed Bhuiya - Resume
+                </h3>
+                <button onclick="closeResumeModal()" class="text-gray-400 hover:text-white text-xl p-2 cursor-pointer transition">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!-- Modal Body (PDF Viewer) -->
+            <div class="p-2 sm:p-4 flex-1 bg-gray-950 overflow-y-auto">
+                <iframe src="CV/Mahfuj_Ahmed_Bhuiya.pdf" class="w-full h-[65vh] sm:h-[70vh] rounded-lg border border-gray-800" title="Resume PDF"></iframe>
+            </div>
+            <!-- Modal Footer -->
+            <div class="px-4 sm:px-6 py-3 border-t border-gray-800 flex justify-end gap-3 bg-gray-900/60">
+                <a href="CV/Mahfuj_Ahmed_Bhuiya.pdf" download class="px-4 py-2 text-xs font-semibold text-darkBg bg-cyan-400 rounded-lg hover:bg-cyan-300 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+                <button onclick="closeResumeModal()" class="px-4 py-2 text-xs font-semibold text-gray-300 bg-gray-800 hover:bg-gray-700 rounded-lg transition cursor-pointer">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 sm:py-24 px-4 sm:px-6 border-t border-gray-800/60 bg-gray-950/40">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-white">Let's work together on your next project. 🎈</h2>
+            <p class="text-gray-400 mb-8 text-sm leading-relaxed">
+                Feel free to reach out via email, phone, or social media.
+            </p>
+            
+            <!-- Contact Info Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left">
+                <div class="bg-cardBg p-4 rounded-xl border border-gray-800 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="text-xs text-gray-400 font-mono">Phone / WhatsApp</p>
+                        <a href="tel:01923276663" class="text-sm font-semibold text-gray-200 hover:text-cyan-400 transition truncate block">01923276663</a>
+                    </div>
+                </div>
+
+                <div class="bg-cardBg p-4 rounded-xl border border-gray-800 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-lg flex-shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <p class="text-xs text-gray-400 font-mono">Email</p>
+                        <a href="mailto:ma2228439@gmail.com" class="text-xs sm:text-sm font-semibold text-gray-200 hover:text-cyan-400 transition truncate block">ma2228439@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="mailto:ma2228439@gmail.com" class="inline-block px-8 py-4 font-semibold text-darkBg bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full shadow-lg hover:opacity-90 transition mb-8 text-sm sm:text-base">
+                Let's Get Started
+            </a>
+            <div class="flex justify-center space-x-6 text-2xl text-gray-400">
+                <a href="https://github.com/mahfuj053" target="_blank" class="hover:text-cyan-400 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="https://facebook.com/" target="_blank" class="hover:text-cyan-400 transition"><i class="fa-brands fa-facebook"></i></a>
+                <a href="mailto:ma2228439@gmail.com" class="hover:text-cyan-400 transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-gray-500 border-t border-gray-800/60 px-4">
+        <p>Designed & Built by Mahfuj Ahmed Bhuiya &copy; 2026</p>
+    </footer>
+
+    <!-- Script for Mobile Menu & Resume Modal -->
+    <script>
+        // Mobile Menu Toggle Function
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        // Resume Modal Functions
+        function openResumeModal() {
+            document.getElementById('resumeModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeResumeModal() {
+            document.getElementById('resumeModal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal when clicking outside the box
+        window.onclick = function(event) {
+            let modal = document.getElementById('resumeModal');
+            if (event.target == modal) {
+                closeResumeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
